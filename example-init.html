@@ -1,61 +1,61 @@
 %%[
 
-var @debug, @sk, @rows, @row, @rowCount
+  var @debug, @sk, @rows, @row, @rowCount
 
-set @debug = 1
+  set @debug = 1
 
-set @sk = AttributeValue("Subscriberkey")
-set @rows = LookupRows("Example-LoyaltyDemographics", "SubscriberKey", @sk)
-set @rowCount = rowcount(@rows)
+  set @sk = AttributeValue("Subscriberkey")
+  set @rows = LookupRows("Example-LoyaltySubscriberDemographics", "SubscriberKey", @sk)
+  set @rowCount = rowcount(@rows)
 
-var @language
-set @language = "unknown"
+  var @language
+  set @language = "unknown"
 
-if @rowCount > 0 then
+  if @rowCount > 0 then
 
-    set @row = row(@rows, 1)
-    set @language = field(@row,"language")
+      set @row = row(@rows, 1)
+      set @language = field(@row,"language")
 
-endif
+  endif
 
-var @prefix
+  var @prefix
 
-if @language == "Spanish" or @language == "French" then
-    set @prefix = "W"
-elseif @language == "French" and not @language == "English" then
-    set @prefix = "R"
-elseif @language != "Russian" then
-   set @prefix =  "Q"
-else
-   set @prefix = "X"
-endif
+  if @language == "Spanish" or @language == "French" then
+      set @prefix = "W"
+  elseif @language == "French" and not @language == "English" then
+      set @prefix = "R"
+  elseif @language != "Russian" then
+     set @prefix =  "Q"
+  else
+     set @prefix = "X"
+  endif
 
-var @FirstName
-var @DiscountPct
-var @ReferralCode
-var @ReferralLink
+  var @FirstName
+  var @DiscountPct
+  var @ReferralCode
+  var @ReferralLink
 
-set @FirstName = AttributeValue("FirstName")
+  set @FirstName = AttributeValue("FirstName")
 
-if not empty(@firstName) then
-    set @firstName = propercase(@firstName)
-endif
+  if not empty(@firstName) then
+      set @firstName = propercase(@firstName)
+  endif
 
-set @DiscountPct = AttributeValue("DiscountPct")
-set @DiscountPct = format(@DiscountPct,"p0") /* percent */
-set @DiscountPct = replace(@DiscountPct," ","") /* remove space */
-set @ReferralCode = AttributeValue("ReferralCode")
-set @ReferralCode = concat(@prefix, @ReferralCode)
-set @ReferralLink = AttributeValue("ReferralLink")
+  set @DiscountPct = AttributeValue("DiscountPct")
+  set @DiscountPct = format(@DiscountPct,"p0") /* percent */
+  set @DiscountPct = replace(@DiscountPct," ","") /* remove space */
+  set @ReferralCode = AttributeValue("ReferralCode")
+  set @ReferralCode = concat(@prefix, @ReferralCode)
+  set @ReferralLink = AttributeValue("ReferralLink")
 
-if @debug == 1 then
-  output(concat("sk: ", @sk))
-  output(concat("<br>language: ", @language))
-  output(concat("<br>prefix: ", @prefix))
-  output(concat("<br>firstName: ", @firstName))
-  output(concat("<br>DiscountPct: ", @DiscountPct))
-  output(concat("<br>ReferralCode: ", @ReferralCode))
-  output(concat("<br>ReferralLink: ", @ReferralLink))
-endif
+  if @debug == 1 then
+    output(concat("sk: ", @sk))
+    output(concat("<br>language: ", @language))
+    output(concat("<br>prefix: ", @prefix))
+    output(concat("<br>firstName: ", @firstName))
+    output(concat("<br>DiscountPct: ", @DiscountPct))
+    output(concat("<br>ReferralCode: ", @ReferralCode))
+    output(concat("<br>ReferralLink: ", @ReferralLink))
+  endif
 
 ]%%
