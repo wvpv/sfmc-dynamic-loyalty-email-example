@@ -18,11 +18,11 @@ header-includes:
 
 # Purpose
 
-Create a simple architecture for a dynamic, modular email and template in Salesforce Marketing Cloud.
+Create a simple architecture for a dynamic, modular email template in Salesforce Marketing Cloud.
 
 # Steps to use
 
-1. Review architecture/mapping image - `email-sample-mapping.png`
+1. Review architecture/mapping image - [email-sample-mapping.png](https://bitbucket.org/wvpv/sfmc-dynamic-loyalty-email-example/raw/3fcdb68894d1c38238f8c7ed581bcdd1fe59027d/email-sample-mapping.png)
 2. Create required Data Extensions
 
     - **LoyaltySubscribers** - Your primary sending and preview audience
@@ -81,6 +81,6 @@ Create a simple architecture for a dynamic, modular email and template in Salesf
         + External Key: `Example-Footer`
 
 5. Create a new email using the Example Template
-    -
+    - Drag each saved element to email as indicated in mapping diagram
 6. Preview email against `LoyaltySubscribers` data extension
 7. If you're pleased with the results, set the `@debug` value to `0` in the init block.
