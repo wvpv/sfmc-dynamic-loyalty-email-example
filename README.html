@@ -71,21 +71,27 @@ SOFTWARE.
 <li>Review architecture/mapping image - <a href="https://bitbucket.org/wvpv/sfmc-dynamic-loyalty-email-example/raw/3fcdb68894d1c38238f8c7ed581bcdd1fe59027d/email-sample-mapping.png">email-sample-mapping.png</a></li>
 <li><p>Create required Data Extensions</p>
 <ul>
-<li><p><strong>LoyaltySubscribers</strong> - Your primary sending and preview audience</p>
-<pre><code>SubscriberKey, Text(254)
-EmailAddress, EmailAddress
-FirstName, Text(50)
-DiscountPct, Decimal(4,2)
-ReferralCode, Text(36)
-ReferralLink, Text(300)</code></pre></li>
-<li><p><strong>LoyaltySubscribersDemographic</strong> - Demographic data related to each Loyalty Subscriber</p>
-<pre><code>SubscriberKey, Text(254)
-Language, Text(15)</code></pre></li>
-<li><p><strong>LoyaltyReferrals</strong> - Subscribers referred by Loyalty Subscribers</p>
-<pre><code>SubscriberKey, Text(254)
-ReferralSubscriberKey, Text(254)
-ReferralName, Text(100)
-ReferralDate, Date</code></pre></li>
+<li><strong>LoyaltySubscribers</strong> - Your primary sending and preview audience
+<ul>
+<li>SubscriberKey, Text(254)</li>
+<li>EmailAddress, EmailAddress</li>
+<li>FirstName, Text(50)</li>
+<li>DiscountPct, Decimal(4,2)</li>
+<li>ReferralCode, Text(36)</li>
+<li>ReferralLink, Text(300)</li>
+</ul></li>
+<li><strong>LoyaltySubscribersDemographic</strong> - Demographic data related to each Loyalty Subscriber
+<ul>
+<li>SubscriberKey, Text(254)</li>
+<li>Language, Text(15)</li>
+</ul></li>
+<li><strong>LoyaltyReferrals</strong> - Subscribers referred by Loyalty Subscribers
+<ul>
+<li>SubscriberKey, Text(254)</li>
+<li>ReferralSubscriberKey, Text(254)</li>
+<li>ReferralName, Text(100)</li>
+<li>ReferralDate, Date</li>
+</ul></li>
 </ul></li>
 <li><p>Upload sample data into each Data Extension</p>
 <ul>
