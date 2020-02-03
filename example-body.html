@@ -1,0 +1,29 @@
+%%=contentBlockByKey("Example-Header")=%%
+<br><br>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td align="center" valign="middle">
+            <p>Hey, %%=v(@FirstName)=%%!</p>
+            <p>Are you enjoying our subscription?</p>
+            <p>Why not share it with your friends?</p>
+            <p>
+                You'll get a <b>%%=v(@DiscountPct)=%%</b> discount on your
+                <br>next month when a friend uses this code:
+            </p>
+            <p>
+                <code style="font-size:15px; font-weight:bold;">
+                 %%=v(@ReferralCode)=%%
+                </code>
+            </p>
+            <div>
+                <a href="%%=redirectto(@referralLink)=%%" style="background-color:#598d4b;color:#ffffff;display:inline-block;font-size:15px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;">Refer a friend</a>
+            </div>
+            %%=contentBlockByKey("Example-LoyaltyReferrals")=%%
+            <p>
+                Best Regards,
+                <br>The Example Team
+            </p>
+        </td>
+    </tr>
+</table>
+<br><br>

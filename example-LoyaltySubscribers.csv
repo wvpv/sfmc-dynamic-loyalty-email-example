@@ -1,0 +1,5 @@
+SubscriberKey,EmailAddress,FirstName,DiscountPct,ReferralCode,ReferralLink
+1111,blake@example.com,Blake,0.10,d06d6735,http://example.com?r=d06d6735
+2222,jaqueline@example.com,Jaqueline,0.12,f2a325ab,http://example.com?r=f2a325ab
+3333,aaron@example.com,aaron,0.14,7fd1434d,http://example.com?r=7fd1434d
+4444,denise@example.com,Denise,0.08,0a180642,http://example.com?r=0a180642

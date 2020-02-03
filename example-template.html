@@ -1,0 +1,17 @@
+<div data-type="slot" data-key="init"></div>
+<html>
+<head>
+  <style>
+    body, a, input {font-family:sans-serif;}
+  </style>
+  <div data-type="slot" data-key="head"></div>
+</head>
+<body>
+  <div data-type="slot" data-key="body"></div>
+  <div data-type="slot" data-key="footer"></div>
+  %%[ if 1==0 then ]%%
+   %%profile_center_url%% %%Member_Busname%% %%Member_Addr%% %%Member_City%% %%Member_State%% %%Member_PostalCode%% %%Member_Country%%
+  %%[ endif ]%%
+  <custom name="opencounter" type="tracking"></custom>
+</body>
+</html>

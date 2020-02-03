@@ -1,0 +1,47 @@
+%%[
+
+  var @sk, @rows, @row, @rowCount, @i
+
+  set @sk = AttributeValue("Subscriberkey")
+  set @rows = LookupOrderedRows("Example-LoyaltyReferrals", 5, "referralDate asc", "SubscriberKey", @sk)
+  set @rowCount = rowcount(@rows)
+
+  if @rowCount > 0 then
+
+    ]%%
+    <br>
+    <center>
+    <p>Thanks for your referrals!</p>
+    <table border="1" cellpadding="3" style="border-collapse: collapse;">
+      <tr>
+          <th>Name</th>
+          <th>Date</th>
+      </tr>
+    %%[
+
+      for @i = 1 to @rowCount do
+
+        var @referralDate, @referralName
+        set @row = row(@rows, @i)
+        set @referralName = field(@row,"referralName")
+        set @referralDate = field(@row,"referralDate")
+
+        ]%%
+            <tr>
+                <td>%%=v(@referralName)=%%</td>
+                <td>%%=FormatDate(@referralDate,"s")=%%</td>
+            </tr>
+        %%[
+
+      next @i
+
+    ]%%
+
+    </table>
+    </center>
+    <br><br>
+
+    %%[
+  endif
+
+]%%
