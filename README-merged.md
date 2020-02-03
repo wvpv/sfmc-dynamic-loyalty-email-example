@@ -1,20 +1,4 @@
----
-pagetitle: 'SFMC-DYNAMIC-LOYALTY-EMAIL-EXAMPLE'
-author:
-    - Adam Spriggs
-lang: en-US
-header-includes:
-        <meta name="keywords" content="AMPscript,Email,Salesforce Marketing Cloud" />
-        <meta name="description" content="A simple architecture for a dynamic, modular email and template in Salesforce Marketing Cloud" />
-...
 # SFMC-DYNAMIC-LOYALTY-EMAIL-EXAMPLE
-
-<!-- MarkdownTOC autolink="true" -->
-
-- [Purpose](#purpose)
-- [Steps to use](#steps-to-use)
-
-<!-- /MarkdownTOC -->
 
 # Purpose
 
