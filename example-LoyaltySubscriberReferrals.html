@@ -1,17 +1,17 @@
+<!-- example-LoyaltyReferrals.html -->
 %%[
 
   var @sk, @rows, @row, @rowCount, @i
 
   set @sk = AttributeValue("Subscriberkey")
-  set @rows = LookupOrderedRows("Example-LoyaltyReferrals", 5, "referralDate asc", "SubscriberKey", @sk)
+  set @rows = LookupOrderedRows("Example-LoyaltySubscriberReferrals", 5, "referralDate asc", "SubscriberKey", @sk)
   set @rowCount = rowcount(@rows)
 
   if @rowCount > 0 then
 
     ]%%
     <br>
-    <center>
-    <p>Thanks for your referrals!</p>
+    <p>Thanks for your previous referrals!</p>
     <table border="1" cellpadding="3" style="border-collapse: collapse;">
       <tr>
           <th>Name</th>
@@ -38,7 +38,6 @@
     ]%%
 
     </table>
-    </center>
     <br><br>
 
     %%[
