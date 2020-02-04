@@ -71,72 +71,81 @@ SOFTWARE.
 <li>Review architecture/mapping image - <a href="https://bitbucket.org/wvpv/sfmc-dynamic-loyalty-email-example/raw/3fcdb68894d1c38238f8c7ed581bcdd1fe59027d/email-sample-mapping.png">email-sample-mapping.png</a></li>
 <li><p>Create required Data Extensions</p>
 <ul>
-<li><strong>LoyaltySubscribers</strong> - Your primary sending and preview audience
-<ul>
-<li>SubscriberKey, Text(254)</li>
-<li>EmailAddress, EmailAddress</li>
-<li>FirstName, Text(50)</li>
-<li>DiscountPct, Decimal(4,2)</li>
-<li>ReferralCode, Text(36)</li>
-<li>ReferralLink, Text(300)</li>
-</ul></li>
-<li><strong>LoyaltySubscribersDemographic</strong> - Demographic data related to each Loyalty Subscriber
-<ul>
-<li>SubscriberKey, Text(254)</li>
-<li>Language, Text(15)</li>
-</ul></li>
-<li><strong>LoyaltyReferrals</strong> - Subscribers referred by Loyalty Subscribers
+<li><strong>Example-LoyaltySubscriberReferrals</strong> - Subscribers referred by Loyalty Subscribers
 <ul>
 <li>SubscriberKey, Text(254)</li>
 <li>ReferralSubscriberKey, Text(254)</li>
 <li>ReferralName, Text(100)</li>
 <li>ReferralDate, Date</li>
 </ul></li>
+<li><strong>Example-LoyaltySubscribers</strong> - Your primary sending and preview audience
+<ul>
+<li>SubscriberKey, Text(254), Primary Key, sendable field</li>
+<li>EmailAddress, EmailAddress</li>
+<li>FirstName, Text(50)</li>
+<li>DiscountPct, Decimal(4,2)</li>
+<li>ReferralCode, Text(36)</li>
+<li>ReferralLink, Text(300)</li>
+</ul></li>
+<li><strong>Example-LoyaltySubscribersDemographic</strong> - Demographic data related to each Loyalty Subscriber
+<ul>
+<li>SubscriberKey, Text(254)</li>
+<li>Language, Text(15)</li>
+</ul></li>
 </ul></li>
 <li><p>Upload sample data into each Data Extension</p>
 <ul>
 <li><strong>LoyaltySubscribers</strong> - <code>example-LoyaltySubscribers.csv</code></li>
 <li><strong>LoyaltySubscribersDemographic</strong> - <code>example-LoyaltySubscriberDemographics.csv</code></li>
-<li><strong>LoyaltyReferrals</strong> - <code>example-LoyaltyReferrals.csv</code></li>
+<li><strong>LoyaltyReferrals</strong> - <code>Example-LoyaltySubscriberReferrals.csv</code></li>
 </ul></li>
 <li><p>Create Blocks in Content Builder using the following HTML files</p>
 <ul>
 <li>Template - <code>example-template.html</code>
 <ul>
+<li>Type: <code>HTML Paste</code></li>
 <li>Name: <code>Example-Template</code></li>
-<li>External Key: <code>Example-Template</code></li>
+<li>Customer Key: <code>Example-Template</code></li>
 </ul></li>
 <li>Init - <code>example-init.html</code>
 <ul>
-<li>Block type: <code>Code</code></li>
+<li>Type: <code>Code Snippet</code></li>
 <li>Name: <code>Example-Init</code></li>
-<li>External Key: <code>Example-Init</code></li>
+<li>Customer Key: <code>Example-Init</code></li>
 </ul></li>
 <li>Header - <code>example-header.html</code>
 <ul>
-<li>Block type: <code>HTML</code></li>
+<li>Type: <code>HTML</code></li>
 <li>Name: <code>Example-Header</code></li>
-<li>External Key: <code>Example-Header</code></li>
+<li>Customer Key: <code>Example-Header</code></li>
 </ul></li>
 <li>Body - <code>example-body.html</code>
 <ul>
-<li>Block type: <code>HTML</code></li>
+<li>Type: <code>HTML</code></li>
 <li>Name: <code>Example-Body</code></li>
-<li>External Key: <code>Example-Body</code></li>
+<li>Customer Key: <code>Example-Body</code></li>
 </ul></li>
 <li>Footer - <code>example-footer.html</code>
 <ul>
-<li>Block type: <code>HTML</code></li>
+<li>Type: <code>HTML</code></li>
 <li>Name: <code>Example-Footer</code></li>
-<li>External Key: <code>Example-Footer</code></li>
+<li>Customer Key: <code>Example-Footer</code></li>
 </ul></li>
-</ul></li>
-<li>Create a new email using the Example Template
+<li>LoyaltyReferrals - <code>example-loyaltysubscriberreferrals.html</code>
 <ul>
+<li>Type: <code>HTML</code></li>
+<li>Name: <code>Example-LoyaltySubscriberReferrals</code></li>
+<li>Customer Key: <code>Example-LoyaltySubscriberReferrals</code></li>
+</ul></li>
+</ul></li>
+<li><p>Create a new email definition</p>
+<ul>
+<li>Type: <code>Template</code></li>
+<li>Template: <code>Example-Template</code></li>
 <li>Drag each saved element to email as indicated in mapping diagram</li>
 </ul></li>
-<li>Preview email against <code>LoyaltySubscribers</code> data extension</li>
-<li><p>If you’re pleased with the results, set the <code>@debug</code> value to <code>0</code> in the init block.</p></li>
+<li>Preview email against <code>Example-LoyaltySubscribers</code> data extension</li>
+<li><p>If you’re satisfied with the results, set the <code>@debug</code> value to <code>0</code> in the init block.</p></li>
 </ol>
 </article>
 </body>
