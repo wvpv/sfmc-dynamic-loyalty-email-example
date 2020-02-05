@@ -6,7 +6,7 @@ Create a simple architecture for a dynamic, modular email template in Salesforce
 
 # Steps to use
 
-1. Review architecture/mapping image - [email-sample-mapping.png](https://bitbucket.org/wvpv/sfmc-dynamic-loyalty-email-example/raw/3fcdb68894d1c38238f8c7ed581bcdd1fe59027d/email-sample-mapping.png)
+1. Review architecture/mapping image - [email-sample-mapping.png](https://github.com/wvpv/sfmc-dynamic-loyalty-email-example/blob/master/email-sample-mapping.png)
 2. Create required Data Extensions
 
     - **Example-LoyaltySubscriberReferrals** - Subscribers referred by Loyalty Subscribers
